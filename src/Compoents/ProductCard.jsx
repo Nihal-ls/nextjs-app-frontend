@@ -4,7 +4,7 @@ import React from 'react';
 const ProductCard = ({ product }) => {
 
     console.log(product);
-    const { image, name, price, shortDescription,id } = product
+    const { image, name, price, shortDescription,_id } = product
     return (
         <div className=" mx-auto bg-base-100 rounded-tr-3xl rounded-bl-3xl  shadow-sm hover:scale-105 transition ease-in-out hover:shadow-2xl shadow-gray-600">
             <figure>
@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
                 <p>{shortDescription}</p>
                 <p className='font-bold'>${price}</p>
                 <div className="card-actions justify-end">
-                    <Link href='/details' className="btn bg-gray-700 rounded-lg text-white">View Details</Link>
+                    <Link href={`/products/Details/${_id}`} className="btn bg-gray-700 rounded-lg text-white">View Details</Link>
                 </div>
             </div>
         </div>
