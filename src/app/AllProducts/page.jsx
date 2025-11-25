@@ -17,13 +17,14 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/latest-products')
+    fetch('http://localhost:5000/products')
       .then(res => res.json())
       .then(data => {
         setProducts(data)
         setLoading(false)
       })
   }, [])
+  console.log(products);
 
   if (loading) {
     <div>Loading...</div>
@@ -32,8 +33,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <Banner />
-      <h1 className="text-center text-3xl font-bold my-5">Latest Products</h1>
+      <h1 className="text-center text-3xl font-bold my-5">All Products</h1>
       <div className="grid max-w-5xl  gap-5 mx-auto grid-cols-1 md:grid-cols-3">
         {
           products.map(product => <ProductCard product={product}/>)
