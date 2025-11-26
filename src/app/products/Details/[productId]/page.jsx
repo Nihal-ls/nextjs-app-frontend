@@ -18,7 +18,7 @@ export default async function Page(props) {
   let allProducts = [];
 
   try {
-    const res = await fetch('http://localhost:5000/products', { cache: 'no-store' }); // Disable caching for development
+    const res = await fetch('https://nextjs-server-neon.vercel.app/products', { cache: 'no-store' }); // Disable caching for development
 
     if (!res.ok) {
       throw new Error(`Failed to fetch data: ${res.status}`);

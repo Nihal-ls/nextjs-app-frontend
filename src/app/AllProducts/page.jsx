@@ -28,9 +28,6 @@ export default function Home() {
   console.log(products);
  
 
-  if (loading) {
-    <div>Loading...</div>
-  }
   if(products.length == 0){
     return <div className="flex justify-center"><span className="loading loading-spinner loading-xl  min-h-screen items-center"></span></div>
   }
