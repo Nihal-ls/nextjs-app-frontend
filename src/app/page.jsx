@@ -17,7 +17,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/latest-products')
+    fetch('https://nextjs-server-neon.vercel.app/latest-products')
       .then(res => res.json())
       .then(data => {
         setProducts(data)
@@ -27,6 +27,9 @@ export default function Home() {
 
   if (loading) {
     <div>Loading...</div>
+  }
+ if(products.length == 0){
+    return <div className="flex justify-center"><span className="loading loading-spinner loading-xl  min-h-screen items-center"></span></div>
   }
 
   return (

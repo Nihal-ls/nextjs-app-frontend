@@ -14,7 +14,7 @@ const page = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users-products?email=${user.email}`)
+        fetch(`https://nextjs-server-neon.vercel.app/users-products?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
@@ -24,25 +24,30 @@ const page = () => {
     console.log(products);
 
    const handleDelete = async (id) => {
-    const response = await fetch(`http://localhost:5000/user-products/${id}`, {
+    const response = await fetch(`https://nextjs-server-neon.vercel.app/user-products/${id}`, {
         method: "DELETE"
     });
 
     const data = await response.json();
-
+    setLoading(true)
     if (data.success) {
         const remaining = products.filter(product => product._id !== id);
         setProducts(remaining);
+        setLoading(false)
     }
 };
 
 
 
     if (loading) {
-        <div>Loading...</div>
-    }
-    if (!products) {
-        return <div>You Have no Products</div>
+ if (loading) {
+        return <div className="flex justify-center"><span className="loading loading-spinner loading-xl  min-h-screen items-center"></span></div>
+
+    }    }
+    if (products == 0) {
+        return <div className='text-center min-h-screen '>
+            <Navbar/>
+            <span className='text-3xl font-bold'>You Have no Products</span></div>
     }
     return (
         <div>
