@@ -39,7 +39,7 @@ const Navbar = () => {
                             {navlinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost bg-gray-800 text-xl">daisyUI</a>
+                    <a className="btn btn-ghost bg-gray-800 text-xl">Klyvex</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-5">

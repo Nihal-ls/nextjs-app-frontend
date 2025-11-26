@@ -1,5 +1,6 @@
 // src/app/products/Details/[productid]/page.jsx (Using your lowercase folder name)
 
+import Footer from "@/Compoents/Footer";
 import Navbar from "@/Compoents/Navbar";
 import Link from "next/link";
 
@@ -32,7 +33,7 @@ export default async function Page(props) {
     console.log('Specific Product Data:', productData);
 
   } catch (error) {
-    console.error("Error fetching or processing data:", error);
+    console.error("Error", error);
   }
   if (!productData) {
     return <h1>Product with ID {productId} not found.</h1>;
@@ -64,6 +65,7 @@ export default async function Page(props) {
         </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
