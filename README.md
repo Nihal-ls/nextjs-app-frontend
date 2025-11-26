@@ -1,6 +1,5 @@
-Short project description
-Setup & installation instructions
-Route summary
+github repo client: https://github.com/Nihal-ls/nextjs-app-frontend.git
+github repo backhand: https://github.com/Nihal-ls/nextjs-app-backhand.git
 
 description: Its a product selling platform where user can sell their products
 
