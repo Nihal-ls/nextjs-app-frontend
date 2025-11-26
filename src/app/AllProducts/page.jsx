@@ -3,6 +3,7 @@
 import Banner from "@/Compoents/Banner";
 import Footer from "@/Compoents/Footer";
 import Navbar from "@/Compoents/Navbar";
+import PrivateRoute from "@/Compoents/PrivateRoute";
 import ProductCard from "@/Compoents/ProductCard";
 import { useEffect, useState } from "react";
 
@@ -31,15 +32,17 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <Navbar />
-      <h1 className="text-center text-3xl font-bold my-5">All Products</h1>
-      <div className="grid max-w-5xl  gap-5 mx-auto grid-cols-1 md:grid-cols-3">
-        {
-          products.map(product => <ProductCard product={product}/>)
-        }
+    <PrivateRoute>
+      <div>
+        <Navbar />
+        <h1 className="text-center text-3xl font-bold my-5">All Products</h1>
+        <div className="grid max-w-5xl  gap-5 mx-auto grid-cols-1 md:grid-cols-3">
+          {
+            products.map(product => <ProductCard product={product} />)
+          }
+        </div>
+        <Footer />
       </div>
-      <Footer/>
-    </div>
+    </PrivateRoute>
   );
 }
