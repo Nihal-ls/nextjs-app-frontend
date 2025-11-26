@@ -64,7 +64,7 @@ const Navbar = () => {
                             </div>
                             : <div className='flex gap-3'>
                                 <Link href='/login' className="btn bg-gray-300 hover:bg-gray-800 hover:text-white rounded-lg px-5">Login</Link>
-                                <button className="btn bg-gray-300 hover:bg-gray-800 hover:text-white rounded-lg px-5 ">Register</button>
+                                <Link href='/Register' className="btn bg-gray-300 hover:bg-gray-800 hover:text-white rounded-lg px-5">Register</Link>
                             </div>
                     }
                 </div>

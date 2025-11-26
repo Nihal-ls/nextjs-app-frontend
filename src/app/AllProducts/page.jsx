@@ -32,7 +32,6 @@ export default function Home() {
   }
 
   return (
-    <PrivateRoute>
       <div>
         <Navbar />
         <h1 className="text-center text-3xl font-bold my-5">All Products</h1>
@@ -43,6 +42,5 @@ export default function Home() {
         </div>
         <Footer />
       </div>
-    </PrivateRoute>
   );
 }
